@@ -1,0 +1,16 @@
+{
+    "disableAutoUpdate": false,
+    "name": "fastLancer",
+    "author": "<font color='#FDD017'> KingFuse</font>",
+    "description": "Let's you cast skills faster",
+    "version": "1.1",
+    "options": {
+        "niceName": "<font color='#00FFFF'> FastLancer </font>",
+        "reloadable": true
+    },
+    "dependencies": {
+        "library": ""
+    },
+    "servers": [""],
+    "supportUrl": ""
+}
