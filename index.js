@@ -70,7 +70,7 @@ const fs = require('fs'),
             
             const skill_id = Math.floor(event.skill.id / 10000);
             const altSkill_id = event.skill.id % 100;
-          //  command.message('skill id'+parseInt(skill_id));
+           command.message('skill id'+parseInt(skill_id));
             if (skill_id in skill_ids || skill_id + '-' + altSkill_id in skill_ids) {
                 
                 const skillInfo = skill_id in skill_ids ? skill_ids[skill_id] : skill_ids[skill_id + '-' + altSkill_id];
@@ -95,8 +95,8 @@ const fs = require('fs'),
         });
         mod.hook('S_ACTION_END', 5, {'order': -1000000,'filter': {'fake': true }}, event => {
            
-          //  if (!isEnabled || event.gameId !== mod.game.me.gameId || mod.game.me.class !== 'lance') return;
-          if (!isEnabled) return;
+          if (!isEnabled || event.gameId !== mod.game.me.gameId || mod.game.me.class !== 'lance') return;
+          //if (!isEnabled) return;
             const skill_id = Math.floor(event.skill.id / 10000);
             const altSkill_id = event.skill.id % 100;
     
@@ -112,8 +112,8 @@ const fs = require('fs'),
         });
     
         mod.hook('C_CANCEL_SKILL', 3, event => {
-           // if (!isEnabled || mod.game.me.class !== 'lance') return;
-           if (!isEnabled) return;
+            if (!isEnabled || mod.game.me.class !== 'lance') return;
+           //if (!isEnabled) return;
             if (lastTimeout) {
                 mod.clearTimeout(lastTimeout);
                 lastTimeout = null;
